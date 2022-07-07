@@ -1,0 +1,53 @@
+Exibir Containers em execução [duas opções]: 
+ > docker ps
+ > docker container ls
+
+
+Exibir todos os container: 
+ > docker ps -a
+ > docker container ls -a
+
+
+
+Executar e permanecer com o container em execução por determinado tempo: 
+ > docker run ubuntu sleep <estimated_time>
+        ubuntu permanece em exeucuçao durante o tempo detemrinado (elapsed time)
+
+Exemplo: 
+$ docker run ubuntu sleep 10s
+
+
+Parar a execução de um container:
+ > docker stop <container_id>
+
+Exemplo:
+$ docker stop b080968d77ff
+
+
+Reiniciar a execução desse container: 
+ > docker star <container id>
+
+Exemplo: 
+$ docker start b080968d77ff
+
+
+Pausar Container Docker: 
+ > docker pause <container-id>
+
+...Despausar: 
+ > docker unpause <container-id>
+
+
+Remover um container: 
+ > docker rm <container-id>
+
+
+Executar o container com interação ao terminal
+ > docker exect -it <container-id> <comando-para-exeutar-no-container>
+
+exemplo: 
+$ docker exec -it 37ff3c033e8b bash
+
+ * In case of your input device it ns not a TTY: 
+$ winpty docker exec -it 37ff3c033e8b bash
+
