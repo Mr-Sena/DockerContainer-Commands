@@ -51,3 +51,26 @@ $ docker exec -it 37ff3c033e8b bash
  * In case of your input device it ns not a TTY: 
 $ winpty docker exec -it 37ff3c033e8b bash
 
+
+
+## Flags & Mapping ports
+
+Executar um container sem travar o terminal: 
+ > docker run -d <container-image>
+
+Exemplo: 
+$ docker dun -d dockersamples/static-site
+
+
+Executar um container com as portas mapeadas no host:
+ > docker run -d -P <container-image>
+
+
+Executar um container e mapear as respectivas portas manualmente
+ > docker run -d -p <porta-para-acessar-no-host>:<container-port> <container-image>
+
+Exemplo: docker run -d -p 8080:80 dockersamples/static-site
+
+
+Exibir o mapeamento das portas:
+ > docker port <container-id>
