@@ -25,7 +25,7 @@ $ docker stop b080968d77ff
 
 
 Reiniciar a execução desse container: 
- > docker star <container id>
+ > docker start <container id>
 
 Exemplo: 
 $ docker start b080968d77ff
@@ -59,7 +59,7 @@ Executar um container sem travar o terminal:
  > docker run -d <container-image>
 
 Exemplo: 
-$ docker dun -d dockersamples/static-site
+$ docker run -d dockersamples/static-site
 
 
 Executar um container com as portas mapeadas no host:
@@ -74,3 +74,33 @@ Exemplo: docker run -d -p 8080:80 dockersamples/static-site
 
 Exibir o mapeamento das portas:
  > docker port <container-id>
+
+
+
+
+
+Exibição das informações de imagens que forma executadas:
+ > docker images
+
+
+Apresentação de informações mais detalhadas sobre determinada image: 
+ > docker inspect <image-id>
+
+Exemplo: 
+$ docker inspect f589ccde7957
+
+
+Exibir camadas para construção final da image: 
+ > docker history <image-id>
+
+
+
+
+Compilar uma imagem para o Docker:
+ > docker build -t <tag> <contexto-execução>
+
+Exemplo: 
+$ docker build -t test/app-node:1.0 .
+OBS: o contexto de execução, nesse caso, foi o diretório atual, por isso o pontal no final do comando.
+
+-t -> para taguear a image 

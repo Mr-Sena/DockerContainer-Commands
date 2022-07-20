@@ -1,0 +1,1 @@
+Subir o app em um docker container docker.
